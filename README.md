@@ -25,3 +25,6 @@ What is settings.py and your purpose?
 
 What is urls.py and your purpose?
 - Configure routes
+
+Django works with mode MODEL VIEW TEMPLATE like MVC
+- View in Django works like a Controller
