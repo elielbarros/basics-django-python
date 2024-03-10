@@ -28,3 +28,12 @@ What is urls.py and your purpose?
 
 Django works with mode MODEL VIEW TEMPLATE like MVC
 - View in Django works like a Controller
+
+When create a new app?
+- It is interesting to think about app as a page.
+- Everything that compound a page must be inside the app.
+- If something diverges the page idea it is necessary to move it to another app.
+
+How create a new app?
+- Run the command:
+- ```python manage.py startapp <NEW_APP_NAME_HERE>```
