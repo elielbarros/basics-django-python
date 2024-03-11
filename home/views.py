@@ -17,5 +17,5 @@ def home_view(request):
     # equal file names.
     return render(
             request,
-            'home/index.html'
+            'home/index.html'  # 'global/base.html'
     )
