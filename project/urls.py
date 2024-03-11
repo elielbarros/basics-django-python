@@ -15,13 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from home import views as home_views
-from blog import views as blog_views
+from django.urls import path, include
 
+# About method include
+# Use include method to join another endpoints to principal created here.
+# For example, it is not necessary to repeat blog: blog/article/image/comment
+# Using include, it is necessary just add /article/image/comment inside app
+# blog.
 
 urlpatterns = [
-    path('', home_views.home_view),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('blog/', blog_views.blog_view),
+    path('blog/', include('blog.urls')),
 ]
