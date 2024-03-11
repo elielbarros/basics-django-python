@@ -2,3 +2,6 @@
 /shelf/
 /workspace.xml
 /codeStyles/codeStyleConfig.xml
+blog/__pycache__/
+home/__pycache__/
+project/__pycache__/
