@@ -6,8 +6,14 @@ from django.http import HttpResponse
 
 def blog(request):
     # do something here
-    return HttpResponse('Blog Views')
+    return render(
+            request,
+            'blog/index.html'
+    )
 
 
 def example(request):
-    return HttpResponse('Example View')
+    return render(
+            request,
+            'blog/example.html'
+    )
