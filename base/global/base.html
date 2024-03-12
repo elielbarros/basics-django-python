@@ -1,5 +1,9 @@
-<!-- include will include here html code that is in head.html -->
+<!-- will include here html code that is in head.html -->
 {% include 'global/partials/head.html' %}
+
+<!-- Include menu.html code from partials -->
+{% include 'global/partials/menu.html' %}
+
     <!-- This block will be used as inheritance by home/index.html -->
     <h1>{% block text %} BASE {% endblock text %}</h1>
 </body>

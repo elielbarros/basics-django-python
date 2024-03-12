@@ -1,0 +1,17 @@
+<nav>
+    <ul>
+        <li>
+            <!-- It is not recommended to use url hard coded -->
+            <!-- So it is necessary to use url -->
+            <!-- How know which url provide? -->
+            <!-- It is necessary to provide url inside file urls.py -->
+            <a href="{% url 'home:home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'blog:home' %}">Blog</a>
+        </li>
+        <li>
+            <a href="{% url 'blog:example' %}">Example</a>
+        </li>
+    </ul>
+</nav>
