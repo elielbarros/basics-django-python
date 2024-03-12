@@ -119,7 +119,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# As the directory template, it is possible to create static directory
+# inside apps. On this project, for example, Django will recognize when a
+# directory named static is created in home or blog.
 STATIC_URL = 'static/'
+
+# To add static files from directory base that was created for base purposes
+STATICFILES_DIRS = [
+    BASE_DIR / 'base' / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
