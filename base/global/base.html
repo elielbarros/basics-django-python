@@ -6,5 +6,11 @@
 
     <!-- This block will be used as inheritance by home/index.html -->
     <h1>{% block text %} BASE {% endblock text %}</h1>
+
+    <main class="posts">
+        <!-- Include postblock.html from partials -->
+        {% include 'global/partials/postblock.html' %}
+    </main>
+
 </body>
 </html>
