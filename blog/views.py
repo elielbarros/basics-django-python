@@ -5,15 +5,26 @@ from django.http import HttpResponse
 
 
 def blog(request):
-    # do something here
+    context = {
+        'text': 'You are in blog page.',
+        'title': 'Blog Title - '
+    }
+    
     return render(
             request,
-            'blog/index.html'
+            'blog/index.html',
+            context
     )
 
 
 def example(request):
+    context = {
+        'text': 'You are in example page.',
+        'title': 'Example Title - '
+    }
+    
     return render(
             request,
-            'blog/example.html'
+            'blog/example.html',
+            context
     )

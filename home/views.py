@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 
 def home_view(request):
-    # do something here
     # To render the page home.html it is necessary to configure the app home
     # created on file settings.py > in INSTALLED_APPS array > add home that
     # is configured at apps.py of home app, HomeConfig > name
@@ -15,7 +14,14 @@ def home_view(request):
     # directory with app name, for example, templates > home > template files
     # This strategy is named namespace, this will avoid collision between
     # equal file names.
+    
+    context = {
+        'text': 'You are in home.',
+        'title': 'Home Title - '
+    }
+    
     return render(
             request,
-            'home/index.html'  # 'global/base.html'
+            'home/index.html',  # 'global/base.html'
+            context
     )
