@@ -2,3 +2,9 @@
 {% extends 'global/base.html' %}
 <!-- This code block will exchange text value -->
 {% block text %} BLOG INDEX: {{ text }} {% endblock text %}
+
+<!-- implement block posts created in base.html -->
+{% block posts %}
+    <!-- Include postblock.html from partials -->
+    {% include 'global/partials/postblock.html' %}
+{% endblock posts %}

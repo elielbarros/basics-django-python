@@ -8,8 +8,8 @@
     <h1>{% block text %} BASE {% endblock text %}</h1>
 
     <main class="posts">
-        <!-- Include postblock.html from partials -->
-        {% include 'global/partials/postblock.html' %}
+        <!-- Use a block to implement posts dynamically -->
+        <h1>{% block posts %}{% endblock posts %}</h1>
     </main>
 
 </body>
