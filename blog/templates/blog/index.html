@@ -6,8 +6,10 @@
 
 <!-- implement block posts created in base.html -->
 {% block posts %}
-    <!-- Include postblock.html from partials -->
-    {% include 'global/partials/postblock.html' %}
-    {% include 'global/partials/postblock.html' %}
-    {% include 'global/partials/postblock.html' %}
+    <!-- posts is the variable that came from context, that is in blog/views.py -->
+    {% for post in posts %}
+        <!-- Include postblock.html from partials -->
+        <!-- now that we are using post, inside postblock will be possible to access post -->
+        {% include 'global/partials/postblock.html' %}
+    {% endfor %}
 {% endblock posts %}

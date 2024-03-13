@@ -37,3 +37,7 @@ When create a new app?
 How create a new app?
 - Run the command:
 - ```python manage.py startapp <NEW_APP_NAME_HERE>```
+
+It will be used an API to get fill the pages
+- Access the url:
+- https://jsonplaceholder.typicode.com/posts
