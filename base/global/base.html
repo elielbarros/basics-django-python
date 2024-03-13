@@ -7,9 +7,9 @@
     <!-- This block will be used as inheritance by home/index.html -->
     <h1>{% block text %} BASE {% endblock text %}</h1>
 
-    <main class="posts">
+    <main class="content">
         <!-- Use a block to implement posts dynamically -->
-        <h1>{% block posts %}{% endblock posts %}</h1>
+        {% block posts %}{% endblock posts %}
     </main>
 
 </body>
