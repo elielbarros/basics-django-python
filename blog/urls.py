@@ -14,6 +14,7 @@ urlpatterns = [
     # it is prudent identify id type
     # URL Dispatcher
     # https://docs.djangoproject.com/en/4.2/topics/http/urls/
-    path('post/<int:id>', views.post, name='post'),
+    # 'post/<int:id>/'
+    path('<int:id>/', views.post, name='post'),
     path('example/', views.example, name='example')
 ]
