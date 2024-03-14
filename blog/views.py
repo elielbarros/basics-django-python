@@ -10,7 +10,7 @@ def blog(request):
     # response = requests.get('https://jsonplaceholder.typicode.com/posts')
     # json_content = response.json()
     context = {
-        'text': 'You are in blog page.',
+        # 'text': 'You are in blog page.',
         'title': 'Blog Title - ',
         'posts': posts
     }

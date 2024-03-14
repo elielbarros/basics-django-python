@@ -4,8 +4,10 @@
 <!-- Include menu.html code from partials -->
 {% include 'global/partials/menu.html' %}
 
-    <!-- This block will be used as inheritance by home/index.html -->
-    <h1>{% block text %} BASE {% endblock text %}</h1>
+    {% if text %}
+        <!-- This block will be used as inheritance by home/index.html -->
+        <h1>{% block text %}{% endblock text %}</h1>
+    {% endif %}
 
     <main class="content">
         <!-- Use a block to implement posts dynamically -->
