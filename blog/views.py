@@ -33,3 +33,16 @@ def example(request):
             'blog/example.html',
             context
     )
+
+def post(request, id):
+    context = {
+        # 'text': 'You are in blog page.',
+        'title': 'Blog Title - ',
+        'posts': posts
+    }
+    
+    return render(
+            request,
+            'blog/index.html',
+            context
+    )
