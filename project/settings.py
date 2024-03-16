@@ -23,9 +23,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1daynq=q=qh-@8vv&-2m$-#gs(j=!uo#hy_tt^(-fz7j^#b_bf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# IF DEBUG FILLED AS FALSE:
+# CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.
+# IT IS NECESSARY TO CONFIGURE ALLOWED_HOSTS
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# AFTER SET DEBUG AS FALSE, SET HOST HERE
+# AFTER SET ALLOWED HOST ALL STATIC FILES AS CSS FILES WILL NOT BE LOADED
+# THIS HAPPENS BECAUSE DJANGO SERVER DOES NOT WORK TO SERVE FILES
+# DJANGO IS AN APPLICATION NOT A SERVER
+# THATS WHY GUNICORN
+# ANYWAY, RUN APPLICATION WITH PYTHON LIKE THE COMMAND:
+# - python manage.py collectstatic
+# django.core.exceptions.ImproperlyConfigured: You're using the staticfiles
+# app without having set the STATIC_ROOT setting to a filesystem path.
+# SO IT IS NECESSARY TO CONFIGURE STATIC_ROOT
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -43,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,6 +144,15 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'base' / 'static'
 ]
+
+# CONFIGURE STATIC_ROOT MENTIONED BEFORE
+# STATIC_ROOT WILL BE A DIRECTORY THAT WILL MAINTAIN DJANGO APPLICATION
+# STATIC FILES
+# THIS DIRECTORY DOES NOT NEED TO GO TO GIT
+# AS KNOWN DJANGO DOES NOT SERVE THIS STATIC FILES SO IT WILL BE USED WHITE
+# NOISE. HERE THE DOCUMENTATION:
+# https://whitenoise.readthedocs.io/en/latest/
+STATIC_ROOT = BASE_DIR / 'static_files'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

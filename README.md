@@ -41,3 +41,17 @@ How create a new app?
 It will be used an API to get fill the pages
 - Access the url:
 - https://jsonplaceholder.typicode.com/posts
+
+Install WhiteNoise to serve Django application with static files
+- doc: https://whitenoise.readthedocs.io/en/latest/
+- Installation: pip install whitenoise
+- Add WhiteNoise to the MIDDLEWARE list
+
+```
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    ...
+```
+- Run collectstatic to collect static files: ```python manage.py collectstatic```
+- After that run the server:  ```python <manage.py path here> runserver```
